@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="productsection">
+        <figure>
+            <img src="./apple-macbook-air-m3-2024-14.webp" alt="">
+            <figcaption>PRODUCT 1</figcaption>
+        </figure>
+            <button data-open-modal>view deatils</button>
+            <dialog data-modal>
+                <div class="modal-section">
+                <h1>PRODUCT 1</h1>
+               
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aliquam porro nisi fuga laudantium architecto Lorem ipsum dolor sit amet.</p>
+                    <img src="./apple-macbook-air-m3-2024-14.webp" alt="" srcset="">
+                <button data-close-modal>X</button>
+                </div>
+            </dialog>
+    </div>
+    <div class="productsection">
+        <figure>
+            <img src="./211025072623-macbook-pro-14-display-5.jpg" alt="">
+            <figcaption>PRODUCT 2</figcaption>
+        </figure>
+        <button data-open-modal>view deatils</button>
+            <dialog data-modal class="green">
+                <div class="modal-section">
+                <h1>PRODUCT 2</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aliquam porro nisi fuga laudantium architecto Lorem ipsum dolor sit amet.</p>
+                    <img src="./GRY-image-0.webp " alt="" >
+                <button data-close-modal>X</button>
+                </div>
+            </dialog>
+    </div>
+
+    <script>
+        const modal = document.querySelectorAll("[data-modal]")
+        const openButton = document.querySelectorAll("[data-open-modal]")
+        const closeButton = document.querySelectorAll("[data-close-modal]")
+        console.log(openButton)
+         // Attach event listeners to open buttons
+        // Attach event listeners to open buttons
+        openButton.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                modal[index].showModal();
+                modal[index].classList.add("showing");
+            });
+        });
+
+        // Attach event listeners to close buttons
+        closeButton.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                modal[index].classList.remove("showing");
+                setTimeout(() => modal[index].close(), 300); // Match the duration of CSS transition
+            });
+        });
+    </script>
+</body>
+</html>

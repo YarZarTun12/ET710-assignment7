@@ -1,0 +1,131 @@
+
+
+
+  body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(rgb(255, 190, 217), blueviolet);
+
+  }
+dialog {
+    background-color: rgba(255, 156, 239, 0.411);
+    backdrop-filter: blur(15px);
+    border: none;
+   border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    transform: scale(0.8); 
+    opacity: 0; 
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    padding-top: 0;
+    overflow: hidden;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.modal-section{
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+dialog h1{
+    width: 100%;
+    background-color: rgb(205, 43, 226);
+    padding: 20px 20px;
+    margin: 0;
+}
+
+dialog p{
+    background-color: rgb(226, 43, 98);
+    padding: 10px 10px;
+    margin: 20px 20px;
+    color: whitesmoke;
+}
+dialog img{
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    clip-path: xywh(0 5px 100% 75% round 15% 0);
+}
+
+dialog.showing {
+    transform: scale(1);
+    opacity: 1; 
+}
+
+dialog::backdrop {
+    background: rgba(113, 111, 255, 0.5);
+    backdrop-filter: blur(4px);
+    transition: background-color 0.3s ease-out;
+}
+.green::backdrop{
+    background: rgba(140, 255, 111, 0.5);
+}
+
+button[data-close-modal] {
+    background-color: #3662f4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:all 0.3s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+
+button[data-close-modal]:hover {
+    background-color: #2f68d3;
+    transform: scale(1.1);
+}
+
+.modal-section img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+
+}
+
+.productsection {
+    padding: 20px 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid blueviolet;
+    background-image: linear-gradient(blueviolet, rgb(255, 182, 231));
+    border-radius: 30px;
+    transition: all 0.5s ease-in-out;
+}
+.productsection:hover{
+    transform: translateY(-20px) scale(1.05);
+    box-shadow: rgba(255, 255, 255, 0.15) 1.95px 1.95px 2.6px;
+}
+.productsection img{
+
+    width: 400px;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+}
+
+button[data-open-modal] {
+    background-color: rgb(0, 47, 255);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button[data-open-modal]:hover {
+    background-color: rgb(4, 0, 255);
+    transform: scale(1.1);
+}
